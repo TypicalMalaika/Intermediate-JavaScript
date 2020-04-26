@@ -1,0 +1,14 @@
+const {shopForBeans, soakTheBeans, cookTheBeans} = require('./library.js');
+
+// Write your code below:
+async function makeBeans() {
+  //Each step cannot be executed without the result of the precedor result
+  //calls function which prints out which beans were bought after a while
+  let type = await shopForBeans();
+  //used to print out whether the beans are ready to be cooked or not
+  let isSoft = await soakTheBeans(type);
+  //used to print out whether beans are cooked or not
+  let dinner = await cookTheBeans(isSoft);
+  console.log(dinner)
+}
+makeBeans()
